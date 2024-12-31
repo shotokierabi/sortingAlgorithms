@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="styles.css">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестирование</title>
+</head>
+<body>
+<header class="header">
+  <div class="container1">
+    <h1>Тестирование</h1>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">О проекте</a></li>
+        <li><a href="algoritms.html">Алгоритмы</a></li>
+        <li><a href="struktur.html">Структуры данных</a></li>
+        <li><a href="test.html">Тестирование</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container">
+    <h2>Алгоритмы упорядочивания данных</h2>
+    <input type="file" id="file">
+    <div id="algorithm-buttons">
+        <label>
+            <input type="checkbox" id="caseSensitive"> Не учитывать регистр
+        </label>
+        <br><br>
+        <button onclick="sortData('bubble')">Сортировка пузырьком</button>
+        <button onclick="sortData('selection')">Сортировка выбором</button>
+        <button onclick="sortData('insertion')">Сортировка вставками</button>
+        <button onclick="sortData('quick')">Быстрая сортировка</button>
+        <button onclick="sortData('merge')">Сортировка слиянием</button>
+        <button onclick="sortData('heap')">Сортировка кучей</button>
+    </div>
+    <table id="timeTable">
+        <thead>
+        <tr>
+            <th>Сортировка пузырьком</th>
+            <th>Сортировка выбором</th>
+            <th>Сортировка вставками</th>
+            <th>Быстрая сортировка</th>
+            <th>Сортировка слиянием</th>
+            <th>Пирамидальная сортировка</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td id="time-bubble">-</td>
+            <td id="time-selection">-</td>
+            <td id="time-insertion">-</td>
+            <td id="time-quick">-</td>
+            <td id="time-merge">-</td>
+            <td id="time-heap">-</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="columns">
+        <div class="column" id="originalData">Здесь представлены оригинальные данные</div>
+        <div class="column" id="sortedData">Здесь представлены отсортированные данные</div>
+    </div>
+</div>
+<footer>
+    &copy; 2024 Лимонова А.Е. Алгоритмы сортировки
+</footer>
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+</body>
+</html>

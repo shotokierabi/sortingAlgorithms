@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Алгоритмы</title>
+    <link rel="stylesheet" href="algoritms.css">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <h1>Алгоритмы</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">О проекте</a></li>
+                <li><a href="algoritms.html">Алгоритмы</a></li>
+                <li><a href="struktur.html">Структуры данных</a></li>
+                <li><a href="test.html">Тестирование</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div id="controls">
+    <button id="generateArray">Сгенерировать массив</button>
+    <select id="algorithmSelect">
+        <option value="bubble">Сортировка пузырьком</option>
+        <option value="insertion">Сортировка вставками</option>
+        <option value="quick">Быстрая сортировка</option>
+        <option value="merge">Сортировка слиянием</option>
+    </select>
+    <button id="executeAlgorithm">Запустить алгоритм</button>
+</div>
+<div id="arrayContainer"></div>
+<div style="text-align: center; margin-top: 10px;">
+    <strong>Время выполнения: </strong><span id="executionTime">0 мс</span>
+</div>
+<footer>
+    &copy; 2024 Лимонова А.Е. Алгоритмы сортировки
+</footer>
+<script src="algoritms.js"></script>
+</body>
+</html>

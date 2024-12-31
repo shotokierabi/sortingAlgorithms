@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Структуры данных</title>
+    <link rel="stylesheet" href="struktur.css">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <h1>Структуры данных</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">О проекте</a></li>
+                <li><a href="algoritms.html">Алгоритмы</a></li>
+                <li><a href="struktur.html">Структуры данных</a></li>
+                <li><a href="test.html">Тестирование</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<!-- Раздел Структуры данных -->
+<section id="dataStructures">
+    <h2>Структуры данных</h2>
+    <p>В этом разделе представлены основные структуры данных, используемые в проекте:</p>
+
+    <!-- Структура данных: Массив -->
+    <div class="structure">
+        <h3>Массив</h3>
+        <p>Массив — это структура данных, которая хранит элементы одинакового типа в одном месте. Элементы массива могут быть доступны по индексу.</p>
+        <pre><code>const array = [1, 2, 3, 4, 5];</code></pre>
+    </div>
+
+    <!-- Структура данных: Стек -->
+    <div class="structure">
+        <h3>Стек</h3>
+        <p>Стек — это структура данных, работающая по принципу LIFO (Last In, First Out). Элементы добавляются и удаляются с одного конца.</p>
+        <pre><code>
+class Stack {
+    constructor() {
+        this.items = [];
+    }
+
+    push(element) {
+        this.items.push(element);
+    }
+
+    pop() {
+        if (this.isEmpty()) return 'Underflow';
+        return this.items.pop();
+    }
+
+    isEmpty() {
+        return this.items.length === 0;
+    }
+
+    peek() {
+        return this.items[this.items.length - 1];
+    }
+}
+        </code></pre>
+    </div>
+
+    <!-- Структура данных: Очередь -->
+    <div class="structure">
+        <h3>Очередь</h3>
+        <p>Очередь — это структура данных, работающая по принципу FIFO (First In, First Out). Элементы добавляются в конец очереди и удаляются с начала.</p>
+        <pre><code>
+class Queue {
+    constructor() {
+        this.items = [];
+    }
+
+    enqueue(element) {
+        this.items.push(element);
+    }
+
+    dequeue() {
+        if (this.isEmpty()) return 'Underflow';
+        return this.items.shift();
+    }
+
+    isEmpty() {
+        return this.items.length === 0;
+    }
+
+    peek() {
+        return this.items[0];
+    }
+}
+        </code></pre>
+    </div>
+
+    <!-- Структура данных: Двоичное дерево поиска -->
+    <div class="structure">
+        <h3>Двоичное дерево поиска (BST)</h3>
+        <p>Двоичное дерево поиска — это структура данных, в которой каждый узел имеет два поддерева, и элементы организованы так, что для каждого узла его левый поддерево содержит элементы меньшие, а правый — большие.</p>
+        <pre><code>
+class BST {
+    constructor() {
+        this.root = null;
+    }
+
+    insert(value) {
+        const newNode = { value, left: null, right: null };
+        if (!this.root) {
+            this.root = newNode;
+            return;
+        }
+
+        let current = this.root;
+        while (true) {
+            if (value < current.value) {
+                if (!current.left) {
+                    current.left = newNode;
+                    return;
+                }
+                current = current.left;
+            } else {
+                if (!current.right) {
+                    current.right = newNode;
+                    return;
+                }
+                current = current.right;
+            }
+        }
+    }
+
+    inorderTraversal(node = this.root, result = []) {
+        if (!node) return result;
+
+        this.inorderTraversal(node.left, result);
+        result.push(node.value);
+        this.inorderTraversal(node.right, result);
+
+        return result;
+    }
+}
+        </code></pre>
+    </div>
+
+</section>
+
+<footer>
+    &copy; 2024 Лимонова А.Е. Алгоритмы сортировки
+</footer>
+
+</body>
+</html>
